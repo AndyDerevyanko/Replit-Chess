@@ -39,7 +39,7 @@ Chess is a two-player strategy board game played on an 8×8 grid. Each side (Whi
 
 My Chess program focuses on clean object-oriented design, readable code, and all proper rule implementation (castling, en passant, promotion, stalemate/checkmate detection, and move legality checks).
 
-
+<br>
 <a name="-controls"></a>
 
 ## 🌟 Controls (default)
