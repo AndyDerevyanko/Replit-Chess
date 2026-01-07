@@ -195,8 +195,8 @@ If you are using the old cmd.exe, I highly recommend downloading the modern Wind
 
 If you are running the project directly inside the VS Code integrated terminal:
 
-- Check Encoding: Ensure the status bar at the bottom right of VS Code says UTF-8. If it says Windows 1252, click it and select "Reopen with Encoding" → "UTF-8".
-- Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
+Check Encoding: Ensure the status bar at the bottom right of VS Code says UTF-8. If it says Windows 1252, click it and select "Reopen with Encoding" → "UTF-8".
+Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
 
 ```json
   "terminal.integrated.env.windows": {
