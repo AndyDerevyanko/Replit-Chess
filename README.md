@@ -199,11 +199,10 @@ If you are running the project directly inside the VS Code integrated terminal:
 - Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
 
 ```json
-{
   "terminal.integrated.env.windows": {
     "CHCP": "65001"
   }
-}
+
 
 ####  🏳️ Fallback Mode
 
