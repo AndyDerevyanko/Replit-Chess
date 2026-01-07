@@ -6,7 +6,7 @@
   A compact, object-oriented C++ implementation of chess playable in the terminal. This project demonstrates OOP, inheritance, polymorphism, move-generation, board representation, and file I/O for saving/loading games. <br><br>
   The project goes above and beyond by supporting <b>all standard algebraic chess notation (SAN)</b>
   inputs, including captures, checks, checkmates, castling, promotions, and disambiguation.
-  <br><br>
+  <br>
 </p>
 <p align="center">
 <b>Example</b><br>
