@@ -39,6 +39,7 @@ Chess is a two-player strategy board game played on an 8×8 grid. Each side (Whi
 
 My Chess program focuses on clean object-oriented design, readable code, and all proper rule implementation (castling, en passant, promotion, stalemate/checkmate detection, and move legality checks).
 
+
 <a name="-controls"></a>
 
 ## 🌟 Controls (default)
@@ -129,7 +130,7 @@ UML Diagrams for each object are available below:
 ### genericError UML Diagram
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/AndyDerevyanko/Replit-Chess/main/images/genericError_UML.png" alt="genericError UML" width="600">
+  <img src="https://raw.githubusercontent.com/AndyDerevyanko/Replit-Chess/main/images/genericError_uml.png" alt="genericError UML" width="600">
 </p>
 
 <a name="interested-in-how-this-project-was-developed"></a>
