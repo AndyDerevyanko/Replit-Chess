@@ -172,10 +172,10 @@ Most modern environments (Linux, macOS, Replit) use **UTF-8** encoding by defaul
 Before running the game, you need to tell your terminal to use UTF-8. Run this command in your command prompt or PowerShell:
 
 ```bat
-chcp 65001
+chcp 65001 ```
 
 Note: This change only lasts for the current terminal session.
-2. Use a Unicode-Compatible Font
+#### 2. Use a Unicode-Compatible Font
 
 Even with the right encoding, your terminal needs a font that actually contains the chess glyphs. If you see empty boxes or question marks, switch your terminal font to one of these:
 
@@ -187,10 +187,10 @@ Even with the right encoding, your terminal needs a font that actually contains 
 
     MS Gothic (Standard on most Windows systems)
 
-3. Recommended: Use Windows Terminal
+#### 3. Recommended: Use Windows Terminal
 
-If you are using the old cmd.exe, we highly recommend downloading the modern Windows Terminal from the Microsoft Store. It handles Unicode, emojis, and UTF-8 natively without extra configuration.
-💻 VS Code Specific Setup
+If you are using the old cmd.exe, I highly recommend downloading the modern Windows Terminal from the Microsoft Store. It handles Unicode, emojis, and UTF-8 natively without extra configuration.
+#### 💻 VS Code Specific Setup
 
 If you are running the project directly inside the VS Code integrated terminal:
 
@@ -199,17 +199,51 @@ If you are running the project directly inside the VS Code integrated terminal:
     Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
     JSON
 
-    "terminal.integrated.env.windows": {
+    ```"terminal.integrated.env.windows": {
       "CHCP": "65001"
-    }
+    } 
+```
 
-🏳️ Fallback Mode
+####  🏳️ Fallback Mode
 
-If your environment simply cannot support Unicode symbols, you can toggle ASCII Mode in the game settings to display the board using standard letters:
-Piece	Unicode	ASCII
-Rook	♜	R
-Knight	♞	N
-Bishop	♝	B
-Queen	♛	Q
-King	♚	K
-Pawn	♟	p
+If your environment simply cannot support Unicode symbols, you can replace the pieces with letters in the *chess.h* file:
+```
+struct bl {
+  // Pawn
+  string p = black + "♟︎";
+  // Knight
+  string n = black + "♞";
+  // Bishop
+  string b = black + "♝";
+  // Rook
+  string r = black + "♜";
+  // Queen
+  string q = black + "♛";
+  // King
+  string k = black + "♚";
+};
+
+// Structure defining white chess pieces
+struct wh {
+  // Pawn
+  string p = white + "♙";
+  // Knight
+  string n = white + "♘";
+  // Bishop
+  string b = white + "♗";
+  // Rook
+  string r = white + "♖";
+  // Queen
+  string q = white + "♕";
+  // King
+  string k = white + "♔";
+};
+
+```
+Replace the pieces like: 
+Rook	♜-> R
+Knight	♞-> N
+Bishop	♝-> B
+Queen	♛-> Q
+King	♚-> K
+Pawn	♟-> p
