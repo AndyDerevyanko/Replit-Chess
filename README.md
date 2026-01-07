@@ -241,7 +241,7 @@ struct wh {
 };
 ```
 
-Replace the pieces like: 
+Replace the pieces like:  
 Rook	♜-> R  
 Knight	♞-> N  
 Bishop	♝-> B  
