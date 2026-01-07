@@ -190,14 +190,13 @@ Even with the right encoding, your terminal needs a font that actually contains 
 #### 3. Recommended: Use Windows Terminal
 
 If you are using the old cmd.exe, I highly recommend downloading the modern Windows Terminal from the Microsoft Store. It handles Unicode, emojis, and UTF-8 natively without extra configuration.
+
 #### 💻 VS Code Specific Setup
 
 If you are running the project directly inside the VS Code integrated terminal:
 
-    Check Encoding: Ensure the status bar at the bottom right of VS Code says UTF-8. If it says Windows 1252, click it and select "Reopen with Encoding" → "UTF-8".
-
-    Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
-    JSON
+- Check Encoding: Ensure the status bar at the bottom right of VS Code says UTF-8. If it says Windows 1252, click it and select "Reopen with Encoding" → "UTF-8".
+- Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
 
     ```"terminal.integrated.env.windows": {
       "CHCP": "65001"
@@ -239,6 +238,7 @@ struct wh {
   string k = white + "♔";
 };
 ```
+
 Replace the pieces like: 
 Rook	♜-> R
 Knight	♞-> N
