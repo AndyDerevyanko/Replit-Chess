@@ -164,7 +164,6 @@ If the chess pieces appear as garbled characters (e.g., `ΓÖ£`, `ΓÖƒ∩╕�
 ### Why is this happening?
 Most modern environments (Linux, macOS, Replit) use **UTF-8** encoding by default. However, the legacy Windows Command Prompt often defaults to **ANSI**, which cannot interpret high-quality Unicode chess symbols.
 
----
 
 ### 🔧 Solutions for Windows Users
 
@@ -172,7 +171,8 @@ Most modern environments (Linux, macOS, Replit) use **UTF-8** encoding by defaul
 Before running the game, you need to tell your terminal to use UTF-8. Run this command in your command prompt or PowerShell:
 
 ```bat
-chcp 65001 ```
+chcp 65001
+```
 
 Note: This change only lasts for the current terminal session.
 #### 2. Use a Unicode-Compatible Font
@@ -207,8 +207,8 @@ If you are running the project directly inside the VS Code integrated terminal:
 ####  🏳️ Fallback Mode
 
 If your environment simply cannot support Unicode symbols, you can replace the pieces with letters in the *chess.h* file:
-```
-struct bl {
+
+```struct bl {
   // Pawn
   string p = black + "♟︎";
   // Knight
@@ -238,7 +238,6 @@ struct wh {
   // King
   string k = white + "♔";
 };
-
 ```
 Replace the pieces like: 
 Rook	♜-> R
