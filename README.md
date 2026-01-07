@@ -159,92 +159,57 @@ A basic rundown of how this program functions:
 
 ## 🖥️ Unicode & Console Compatibility (Important)
 
-If your chess pieces display **correctly on Replit but appear as garbled characters** in VS Code (e.g. `ΓÖ£`, `ΓÖƒ∩╕Ä`), this is **not a bug in the program**. It is caused by **character encoding and font differences**, especially on Windows.
+If the chess pieces appear as garbled characters (e.g., `ΓÖ£`, `ΓÖƒ∩╕Ä`) instead of symbols (`♜ ♞ ♝`), this is usually due to **Terminal Encoding** or **Font Limitations**, particularly on Windows systems.
 
-### Why this happens
+### Why is this happening?
+Most modern environments (Linux, macOS, Replit) use **UTF-8** encoding by default. However, the legacy Windows Command Prompt often defaults to **ANSI**, which cannot interpret high-quality Unicode chess symbols.
 
-* Chess symbols (`♜ ♞ ♝ ♛ ♚ ♟`) are **Unicode characters**.
-* Replit forces **UTF-8** encoding everywhere.
-* VS Code on Windows may:
+---
 
-  * Open files as **Windows-1252 / ANSI** instead of UTF-8
-  * Use a terminal font without Unicode support
-  * Run the program in a console that is not set to UTF-8
+### 🔧 Solutions for Windows Users
 
-<a name="fix-1-ensure-source-files-are-utf-8"></a>
-
-### Fix 1 — Ensure source files are UTF-8
-
-In VS Code:
-
-1. Open the source file
-2. Bottom-right → click the encoding label (e.g. `Windows 1252`)
-3. Select **Reopen with Encoding → UTF-8**
-4. Save the file
-
-<a name="fix-2-force-utf-8-in-the-terminal-windows"></a>
-
-### Fix 2 — Force UTF-8 in the terminal (Windows)
-
-Run this **before executing the program**:
+#### 1. Change the Terminal Code Page
+Before running the game, you need to tell your terminal to use UTF-8. Run this command in your command prompt or PowerShell:
 
 ```bat
 chcp 65001
-```
 
-Or add this to your VS Code `settings.json`:
+Note: This change only lasts for the current terminal session.
+2. Use a Unicode-Compatible Font
 
-```json
-{
-  "terminal.integrated.env.windows": {
-    "CHCP": "65001"
-  }
-}
-```
+Even with the right encoding, your terminal needs a font that actually contains the chess glyphs. If you see empty boxes or question marks, switch your terminal font to one of these:
 
-<a name="fix-3-use-a-unicode-capable-font"></a>
+    Cascadia Code / Cascadia Mono (Recommended)
 
-### Fix 3 — Use a Unicode-capable font
+    JetBrains Mono
 
-Recommended terminal fonts:
+    Fira Code
 
-* Cascadia Mono
-* Consolas
-* Fira Code
-* JetBrains Mono
+    MS Gothic (Standard on most Windows systems)
 
-<a name="fix-4-use-wide-characters-in-c++-recommended"></a>
+3. Recommended: Use Windows Terminal
 
-### Fix 4 — Use wide characters in C++ (recommended)
+If you are using the old cmd.exe, we highly recommend downloading the modern Windows Terminal from the Microsoft Store. It handles Unicode, emojis, and UTF-8 natively without extra configuration.
+💻 VS Code Specific Setup
 
-For best portability, output chess pieces using wide characters:
+If you are running the project directly inside the VS Code integrated terminal:
 
-```cpp
-#include <iostream>
-#include <locale>
+    Check Encoding: Ensure the status bar at the bottom right of VS Code says UTF-8. If it says Windows 1252, click it and select "Reopen with Encoding" → "UTF-8".
 
-int main() {
-    std::setlocale(LC_ALL, "");
-    std::wcout << L"♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
-";
-}
-```
+    Update Settings: To make the UTF-8 fix permanent in VS Code, add this to your settings.json:
+    JSON
 
-Compile with UTF-8 support:
+    "terminal.integrated.env.windows": {
+      "CHCP": "65001"
+    }
 
-```bash
-g++ -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 main.cpp
-```
+🏳️ Fallback Mode
 
-<a name="fallback-ascii-mode"></a>
-
-### Fallback (ASCII mode)
-
-If Unicode is not supported, the board can be rendered using ASCII:
-
-```
-r n b q k b n r
-p p p p p p p p
-```
-
-This ensures compatibility across all terminals.
+If your environment simply cannot support Unicode symbols, you can toggle ASCII Mode in the game settings to display the board using standard letters:
+Piece	Unicode	ASCII
+Rook	♜	R
+Knight	♞	N
+Bishop	♝	B
+Queen	♛	Q
+King	♚	K
+Pawn	♟	p
