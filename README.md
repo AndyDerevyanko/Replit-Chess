@@ -10,7 +10,6 @@
 </p>
 <p align="center">
 <b>Example</b><br>
--<br>
 e4<br>
 Nf3<br>
 Bxe6+<br>
