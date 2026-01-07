@@ -242,9 +242,9 @@ struct wh {
 ```
 
 Replace the pieces like: 
-Rook	♜-> R
-Knight	♞-> N
-Bishop	♝-> B
-Queen	♛-> Q
-King	♚-> K
-Pawn	♟-> p
+Rook	♜-> R  
+Knight	♞-> N  
+Bishop	♝-> B  
+Queen	♛-> Q  
+King	♚-> K  
+Pawn	♟-> p  
