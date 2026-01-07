@@ -7,7 +7,8 @@
   The project goes above and beyond by supporting <b>all standard algebraic chess notation (SAN)</b>
   inputs, including captures, checks, checkmates, castling, promotions, and disambiguation.
   <br><br>
-
+</p>
+<p align="center">
 <b>Example</b><br>
 -<br>
 e4<br>
@@ -15,7 +16,6 @@ Nf3<br>
 Bxe6+<br>
 O-O<br>
 c8=Q# <br> <a href="https://github.com/AndyDerevyanko/Replit-Chess/issues">Report Bug/Request Feature</a>
-
 </p>
 
 ## 📚 Table of Contents
