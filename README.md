@@ -202,6 +202,7 @@ If you are running the project directly inside the VS Code integrated terminal:
   "terminal.integrated.env.windows": {
     "CHCP": "65001"
   }
+```
 
 
 ####  🏳️ Fallback Mode
